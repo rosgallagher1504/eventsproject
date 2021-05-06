@@ -20,26 +20,38 @@ class EventController extends Controller
     public function AddEvent(Request $request){
         
             $validatedData = $request->validate([
-                'event_name' => 'required|unique:posts|max:255',
-                'body' => 'required',
+                'event_name' => 'required|unique:events|max:255',
+                'event_location'=>'required',
+                'event_date'=>'required', //needs to be in a date format
+                'event_description'=>'required',
+                'covid_limit'=>'required', //needs to be a numeric value
+               //'body' => 'required',
             ],
             [
                 'event_name.required'=> 'Please Input Event Name',
                 'event_name.max'=> 'Event Less Than 255 Chars',
             ]);
 
-        // Event::insert([
-        //     'event_name' => $request-> event_name,
-        //     'user_id' => Auth::user()->id,
-        //     'created at'=>Carbon::now()
-        // ]);
+        Event::insert([
+            'event_name' => $request->event_name,
+            'user_id' => Auth::user()->id,
+            'event_location' => $request->event_location,
+            'event_date' => $request->event_date,
+            'event_description' => $request->event_description,
+            'covid_limit'=> $request->covid_limit,
+            //'created at'=>Carbon::now()
+         ]);
 
-        $event = new Event;
-        $event->event_name = $request->event_name;
-        $event->user_id = Auth::user()->id;
-        $event-> save();
+        // $event = new Event;
+        // $event->event_name = $request->event_name;
+        // $event->user_id = Auth::user()->id;
+        // $event->event_location = $request->event_location;
+        // $event->event_date = $request->event_date;
+        // $event->event_description = $request->event_description;
+        // $evnt->covid_limit = $request->covid_limit;
+        // $event-> save();
 
-        return Redirect()->back()->with('success', 'Event Inserted Successfully');
+        return Redirect()->back()->with('success', 'Event Added Successfully');
     
     }
 
