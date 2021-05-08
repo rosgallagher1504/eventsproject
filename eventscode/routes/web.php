@@ -43,6 +43,8 @@ Route::get('/event/restore/{id}',[EventController::class, 'Restore']);
 
 Route::get('/pdelete/event/{id}',[EventController::class, 'PDelete']);
 
+Route::get('/event/cancelupdate', [EventController::class, 'CancelUpdate']);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

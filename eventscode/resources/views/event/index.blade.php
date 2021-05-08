@@ -89,7 +89,7 @@
                            @enderror
                         </div>
                         <div class="mb-2">
-                           <label for="exampleInputEmail1">Event Location Postcode</label>
+                           <label for="exampleInputEmail1">Event Postcode</label>
                            <input type="text" name="event_location" class="form-control" 
                               id="exampleInputEmail1" aria-describedby="emailHelp">
                            @error('event_location')

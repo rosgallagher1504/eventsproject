@@ -62,12 +62,32 @@ class EventController extends Controller
     }
 
     public function Update(Request $request, $id){
+        $validatedData = $request->validate([
+            'event_name' => 'required|unique:events|max:255',
+            'event_location'=>'required',
+            'event_date'=>'required', //needs to be in a date format
+            'event_description'=>'required',
+            'covid_limit'=>'required', //needs to be a numeric value
+           //'body' => 'required',
+        ],
+        [
+            'event_name.required'=> 'Please Input Event Name',
+            'event_name.max'=> 'Event Less Than 255 Chars',
+        ]);
         $update = Event::find($id)->update([
             'event_name'=>$request->event_name,
+            'event_location'=>$request->event_location,
+            'event_date'=>$request->event_date,
+            'event_description'=>$request->event_description,
+            'covid_limit'=>$request->covid_limit,
             'user_id'=> Auth::user()->id
         ]);
 
         return Redirect()->route('all.event')->with('success', 'Event Updated Successfully');
+    }
+
+    public function CancelUpdate(){
+        return Redirect()->route('all.event');
     }
 
     public function SoftDelete($id){
