@@ -205,7 +205,7 @@
             </div>
             <div class="col-md-2">
                <div class="card">
-                  <div class="card-header">Create a Brand New Event</div>
+                  <div class="card-header">Create a New Event</div>
                   <div class="card-body">
                      <form action="{{route('store.event')}}"method="POST">
                         @csrf
