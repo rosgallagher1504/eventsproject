@@ -16,8 +16,6 @@ body{
 .table-responsive {
     border: 1px solid #ddd;
     margin-bottom: 15px;
-    overflow-x: auto;
-    overflow-y: hidden;
     width: 100%;
 }
 .table-responsive > .table {

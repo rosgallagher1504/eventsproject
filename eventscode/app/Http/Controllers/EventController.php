@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class EventController extends Controller
 {
     public function AllEvent(){
-        $events= Event::latest()->paginate(5);
+        $events= Event::latest()->paginate(4);
         $trashEvent = Event::onlyTrashed()->latest()->paginate(3);
         return view('event.index', compact('events', 'trashEvent'));
     }
