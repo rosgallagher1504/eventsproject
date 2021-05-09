@@ -1,6 +1,7 @@
 <x-app-layout>
    <x-slot name="header">
    <img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" alt="Image"/>
+     
       <style type="text/css">
          .table-responsive{
          height: 458px;
@@ -29,10 +30,10 @@
          }
          .col-md-3{
          margin-left: 1180px;
-         margin-top: -360px;
+         margin-bottom: -500px;
          width: 230px;
-         position: fixed;
-         top: 550px;
+         position: relative;
+         top: -360px;
          }
          #map {
          height: 400px;
