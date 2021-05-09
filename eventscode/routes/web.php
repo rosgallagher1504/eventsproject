@@ -16,7 +16,7 @@ Use App\Http\Controllers\EventController;
 
 //Home directory
 Route::get('/', function () {
-    return view('dashboard');
+    return Redirect()->route('login');
 });
 
 //allevents directory
@@ -46,6 +46,8 @@ Route::get('/event/restore/{id}',[EventController::class, 'Restore']);
 Route::get('/pdelete/event/{id}',[EventController::class, 'PDelete']);
 
 Route::get('/event/cancelupdate', [EventController::class, 'CancelUpdate']);
+
+Route::get('/event/logout', [EventController::class, 'Logout'])->name('event.logout');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

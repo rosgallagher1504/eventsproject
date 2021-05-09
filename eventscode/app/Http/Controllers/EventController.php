@@ -114,4 +114,9 @@ class EventController extends Controller
         $delete = Event::onlyTrashed()-> find($id)->forcedelete();
         return Redirect()->back()->with('success', 'Event Permanetly Deleted');
     }
+
+    public function Logout(){
+        Auth::Logout();
+        return Redirect()->route('login');
+    }
 }

@@ -1,5 +1,6 @@
 <x-app-layout>
    <x-slot name="header">
+   <img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" alt="Image"/>
       <style type="text/css">
          .table-responsive{
          height: 458px;

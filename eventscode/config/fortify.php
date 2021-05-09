@@ -2,7 +2,7 @@
 
 use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
-
+use Illuminate\Support\Facades\Auth;
 return [
 
     /*
