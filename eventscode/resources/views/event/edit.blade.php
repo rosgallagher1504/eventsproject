@@ -1,10 +1,15 @@
 <x-app-layout>
    <x-slot name="header">
+      <style type="text/css">
+         #edit-event{
+         margin-left: 400px;
+         }
+      </style>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
          Edit Event<b> </b>
       </h2>
    </x-slot>
-   <div class="py-12">
+   <div id="edit-event" class="py-12">
       <div class= "container">
          <div class = "row">
             <div class="col-md-8">
