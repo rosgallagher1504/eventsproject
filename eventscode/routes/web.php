@@ -33,6 +33,8 @@ Route::get('/event/all',[EventController::class, 'AllEvent',])->name('all.event'
 
 Route::post('/event/all',[EventController::class, 'AddEvent',])->name('store.event');
 
+Route::get('/event/view/{id}',[EventController::class, 'View']);
+
 Route::get('/event/edit/{id}',[EventController::class, 'Edit']);
 
 Route::post('/event/update/{id}',[EventController::class, 'Update']);

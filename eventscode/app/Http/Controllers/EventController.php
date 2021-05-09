@@ -55,6 +55,14 @@ class EventController extends Controller
     
     }
 
+
+    public function View($id) {
+        $events = Event::find($id);
+        $events = DB::table('events')->where('id',$id)->first();
+        return view('event.view', compact('events'));
+    }
+
+
     public function Edit($id){
         $events = Event::find($id);
         $events = DB::table('events')->where('id',$id)->first();
