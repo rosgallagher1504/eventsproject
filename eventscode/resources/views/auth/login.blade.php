@@ -2,10 +2,25 @@
     <x-jet-authentication-card>
         <x-slot name="logo">
        
+
+        <style>
+
+
+        .signup-button{
+            margin-left: 80px;
+            margin-top: 40px;
+            margin-bottom: -44px;
+        }
+
+
+        </style>
+
+
+
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-       <img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" alt="Image"/>
+       <img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" alt="Image" style="margin-bottom: 10px;"/>
         @if (session('status'))
             <div class="mb-4 font-medium text-sm text-green-600">
                 {{ session('status') }}
@@ -32,6 +47,16 @@
                 </label>
             </div>
 
+
+            <div class="signup-button">
+                @if (Route::has('register'))
+                   <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                       {{ __('Sign Up') }}
+                   <a>
+                @endif
+
+            </div>
+
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
@@ -39,7 +64,7 @@
                     </a>
                 @endif
 
-                <x-jet-button class="ml-4">
+                <x-jet-button id="login" class="ml-4">
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>

@@ -13,17 +13,7 @@
       <style>
          body {
          font-family: 'Nunito', sans-serif;
-         }
-         .background-circle-group{
-         background: url("img/family-group-meet-up.png");
-         width: 70vw;
-         height: 90vh;
-         background-size: 100% 100%;
-         background-repeat: no-repeat;
-         position: relative;
-         margin-top: 60px;
-         margin-left: 70px;
-         }            
+         }   
       </style>
    </head>
    <body class="antialiased">
@@ -48,7 +38,6 @@
                   </g>
                </svg>
             </div>
-            <div class="background-circle-group"></div>
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                <div class="grid grid-cols-1 md:grid-cols-2">
                   <div class="p-6">
