@@ -3,8 +3,43 @@
    <img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" alt="Image"/>
      
       <style type="text/css">
+
+         .all-events-title{
+            margin-top: 50px;
+            margin-bottom: -2px;
+            height: 50px;
+         }
+         .events-all-title{
+            font-size: 42px;
+            margin-left: 90px;
+            margin: 1em 0.5 0;
+            font-weight: normal;
+            position: relative;
+            text-shadow: 0 -1px rgba(0,0,0,0.6);
+            line-height: 70px;
+            width: 1500px;
+            background: #355681;
+            background: rgba(53, 86, 129, 0.8);
+            border: 1px solid #fff;
+            color: #ffffff;
+            border-radius: 0 10px 0 10px;
+            box-shadow: inset 0 0 5px rgba(53, 86, 129, 0.5);
+            text-align: center;
+            border-color: 	#B22222;
+            border-width: 8px;
+         }
+         .py-12{
+            margin-top: 30px;
+         }
+         .card{
+            border-color: #000000;
+            border-width: 4px;
+         }
          .table-responsive{
          height: 458px;
+         }
+         .all-events-headings{
+            margin-left: 300px;
          }
          .event-actions{
          background-color: #ffffff;
@@ -35,15 +70,10 @@
          position: relative;
          top: -360px;
          }
-         #map {
-         height: 400px;
-         width: 440px;
-         margin-left: 1060px;
-         margin-top: 120px;
-         }
+      
          /* Optional: Makes the sample page fill the window. */
-         html,
-         body {
+         html {
+         background-color: #f5f5f5;
          height: 100%;
          margin: 0;
          padding: 0;
@@ -59,45 +89,6 @@
          #infowindow-content {
          display: none;
          }
-         #map #infowindow-content {
-         display: inline;
-         }
-         .pac-card {
-         margin: 10px 10px 0 0;
-         border-radius: 2px 0 0 2px;
-         box-sizing: border-box;
-         -moz-box-sizing: border-box;
-         outline: none;
-         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-         background-color: #fff;
-         font-family: Roboto;
-         }
-         #pac-container {
-         padding-bottom: 12px;
-         margin-right: 12px;
-         }
-         .pac-controls {
-         display: inline-block;
-         padding: 5px 11px;
-         }
-         .pac-controls label {
-         font-family: Roboto;
-         font-size: 13px;
-         font-weight: 300;
-         }
-         #event-postcode {
-         background-color: #fff;
-         font-family: Roboto;
-         font-size: 15px;
-         font-weight: 300;
-         margin-left: 12px;
-         padding: 0 11px 0 13px;
-         text-overflow: ellipsis;
-         width: 300px;
-         }
-         #event-postcode {
-         border-color: #4d90fe;
-         }
          #title {
          color: #fff;
          background-color: #4d90fe;
@@ -105,14 +96,13 @@
          font-weight: 500;
          padding: 6px 12px;
          }
-         #target {
-         width: 345px;
-         }
       </style>
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+   </x-slot>
+      <div class="all-events-title">
+      <h2 class="events-all-title">
          All Events<b> </b>
       </h2>
-   </x-slot>
+      </div>
    <div class="py-12">
       <div class="container">
          <div class = "row">
@@ -130,14 +120,15 @@
                   <table class="table">
                      <thead>
                         <tr>
-                           <th scope="col">ID</th>
-                           <th scope="col">Event Name</th>
-                           <th scope="col">Event Organiser</th>
-                           <th scope="col">Event Postcode</th>
-                           <th scope="col">Event Date</th>
-                           <th scope="col">Covid Limit</th>
-                           <th scope="col">Created At</th>
-                           <th scope="col">Actions</th>
+                     <div class="all-events-headings">
+                           <th scope="col" style="text-align: center">ID</th>
+                           <th scope="col" style="text-align: center">Event Name</th>
+                           <th scope="col" style="text-align: center">Event Organiser</th>
+                           <th scope="col" style="text-align: center">Event Postcode</th>
+                           <th scope="col" style="text-align: center">Event Date</th>
+                           <th scope="col" style="text-align: center">Covid Limit</th>
+                           <th scope="col" style="text-align: center">Actions</th>
+                     </div>
                         </tr>
                      </thead>
                      <tbody>
@@ -151,16 +142,9 @@
                            <td style="text-align:center;">{{$event->event_date}}</td>
                            <td style="text-align:center;">{{$event->covid_limit}}</td>
                            <td>
-                              @if($event->created_at == NULL)
-                              <span class ="text-danger">No Date Set</span>
-                              @else
-                              {{  Carbon\Carbon::parse($event->created_at)->diffForHumans() }}
-                              @endif
-                           </td>
-                           <td>
                               <div class="btn-group">
-                                 <button type="button" class="btn btn-danger">Event Actions</button>
-                                 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                                 <button type="button" class="btn btn-danger" style="left: 30%;">Event Actions</button>
+                                 <button type="button" class="btn btn-danger dropdown-toggle" style="left: 30%;" data-toggle="dropdown">
                                  <span class="caret"></span>
                                  <span class="sr-only">Toggle Dropdown</span>
                                  </button>
@@ -242,15 +226,15 @@
                <table class="table">
                   <thead>
                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Event Name</th>
-                        <th scope="col">Event Organiser</th>
-                        <th scope="col">Event Postcode</th>
-                        <th scope="col">Event Date</th>
-                        <th scope="col">Event Description</th>
-                        <th scope="col">Covid Limit</th>
-                        <th scope="col">Created At</th>
-                        <th scope="col">Actions</th>
+                  <div class="all-events-headings">
+                        <th scope="col" style="text-align:center;">ID</th>
+                        <th scope="col" style="text-align:center;">Event Name</th>
+                        <th scope="col" style="text-align:center;">Event Organiser</th>
+                        <th scope="col" style="text-align:center;">Event Postcode</th>
+                        <th scope="col" style="text-align:center;">Event Date</th>
+                        <th scope="col" style="text-align:center;">Covid Limit</th>
+                        <th scope="col" style="text-align:center;">Actions</th>
+                  </div>
                      </tr>
                   </thead>
                   <tbody>
@@ -262,19 +246,11 @@
                         <td style="text-align:center;">{{$event->user->name}}</td>
                         <td style="text-align:center;">{{$event->event_location}}</td>
                         <td style="text-align:center;">{{$event->event_date}}</td>
-                        <td style="text-align:center;">{{$event->event_description}}</td>
                         <td style="text-align:center;">{{$event->covid_limit}}</td>
                         <td>
-                           @if($event->created_at == NULL)
-                           <span class ="text-danger">No Date Set</span>
-                           @else
-                           {{ Carbon\Carbon::parse($event->created_at)->diffForHumans()}}
-                           @endif
-                        </td>
-                        <td>
                            <div class="btn-group">
-                              <button type="button" class="btn btn-danger">Event Actions</button>
-                              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                              <button type="button" class="btn btn-danger" style="left: 30%;">Event Actions</button>
+                              <button type="button" class="btn btn-danger dropdown-toggle" style="left: 30%;" data-toggle="dropdown">
                               <span class="caret"></span>
                               <span class="sr-only">Toogle Dropdown</span>
                               </button>
@@ -296,74 +272,8 @@
       </div>
    </div>
    <!-- End Trash -->
-   <script>
-      function initAutocomplete() {
-        const map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: 54.58333, lng: -5.93333 },
-          zoom: 6,
-          mapTypeId: "roadmap",
-        });
-        // Create the search box and link it to the UI element.
-        const input = document.getElementById("event-postcode");
-        const searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-        // Bias the SearchBox results towards current map's viewport.
-        map.addListener("bounds_changed", () => {
-          searchBox.setBounds(map.getBounds());
-        });
-        let markers = [];
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
-        searchBox.addListener("places_changed", () => {
-          const places = searchBox.getPlaces();
-      
-          if (places.length == 0) {
-            return;
-          }
-          // Clear out the old markers.
-          markers.forEach((marker) => {
-            marker.setMap(null);
-          });
-          markers = [];
-          // For each place, get the icon, name and location.
-          const bounds = new google.maps.LatLngBounds();
-          places.forEach((place) => {
-            if (!place.geometry || !place.geometry.location) {
-              console.log("Returned place contains no geometry");
-              return;
-            }
-            const icon = {
-              url: place.icon,
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25),
-            };
-            // Create a marker for each place.
-            markers.push(
-              new google.maps.Marker({
-                map,
-                icon,
-                title: place.name,
-                position: place.geometry.location,
-              })
-            );
-      
-            if (place.geometry.viewport) {
-              // Only geocodes have viewport.
-              bounds.union(place.geometry.viewport);
-            } else {
-              bounds.extend(place.geometry.location);
-            }
-          });
-          map.fitBounds(bounds);
-        });
-      }
-      
-      
-   </script>
-   <input id="event-postcode" class="controls" type="text" placeholder="search-box"/>
-   <div id="map"></div>
-   <script src="https:maps.googleapis.com/maps/api/js?key=AIzaSyB61M8nXMU8gqdlSEKZJhJ3ilh643V6Bdc&callback=initAutocomplete&libraries=places&v=weekly" async></script>
+ 
+  
+   
    </div>
 </x-app-layout>

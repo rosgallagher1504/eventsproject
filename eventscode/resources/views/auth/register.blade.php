@@ -1,10 +1,11 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
+        
+        <img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="centre" style="margin-left: 3px; margin-bottom: 15px;" alt="Circle-Plus-Login-Register-Logo" />
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
