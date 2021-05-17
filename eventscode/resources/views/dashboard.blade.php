@@ -1,108 +1,179 @@
 <x-app-layout>
-    <x-slot name="header">
-    <img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" alt="Image"/>
-
-    <style>
-
-
-    .background-circle-group{
-        background: url("img/family-group-meet-up.png");
-        width: 60vw;
-        height: 70vh;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        position: relative;
-        margin-top: 60px;
-        margin-left: -40px;
-    }
-    .circle-plus-heading{
-        margin: 1em 0 0.5em 0;
-        font-weight: 600;
-        line-height: 40px;
-        color: #ff1a1a;
-        text-transform: uppercase;
-        border-bottom: 4px solid #ff1a1a;
-    }
-    #circle-plus-heading{
-        text-transform: uppercase;
-    }
-    #connect-family-friends{
-
-    }
-    #interest-photos-stories{
-
-    }
-    #remember-occasions{
-
-    }
-    #calculate-budgets{
-
-    }
-    #locate-events{
-
-    }
-    #event-planning{
-
-    }
-    p{
-        margin: 1em 0 0.5em 0;
-        font-weight: 600;
-        text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
-        line-height: 40px;
-        color: #355681;
-        border-bottom: 1px solid rgba(53, 86, 129, 0.3);
-    }
+   <x-slot name="header">
+      <a href="/"><img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="center" alt="Circle-Plus-logo" /></a>
+      <head>
 
 
-    </style>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+      
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-    </x-slot>
-        
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-            </div>
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <p id="circle-plus-heading" class="circle-plus-heading" style="margin-top: 50px; margin-left: 80px; text-align:center;">A simple way to connect with those that are important in your life....</p>
-                <p id="connect-family-friends" style="margin-top: 50px; margin-left: 80px; text-align:center;">Connect with your Family and Friends</p>
-                <p id="interesting-photos-stories" style="margin-top: 50px; margin-left: 80px; text-align:center;">Interesting Photos and Stories to Share</p>
-                <p id="remember-occasions" style="margin-top: 50px; margin-left: 80px; text-align:center;">Remember Special Occasions</p>
-                <p id="calculate-budgets" style="margin-top: 50px; margin-left: 80px; text-align:center;">Calculate Event Budgets</p>
-                <p id="locate-events" style="margin-top: 50px; margin-left: 80px; text-align:center;">Locate where Events are Happening</p>
-                <p id="event-planning" style="margin-top: 50px; margin-left: 80px; text-align:center;">Event Planning made Easy</p>
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
 
-                <div class="background-circle-group"></div>
-                
-                
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg" style="margin-left: 90px;">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="{{route('all.event')}}" class="underline text-gray-900 dark:text-white" style="margin-left: 155px;">View Events</a></div>
-                            </div>
+      </head> 
 
-                            <div class="ml-12">
-                                <p style="margin-top: 15px; text-align:center;">Click here to organise your upcoming events....</p>
-                            </div>
-                        </div>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="{{URL::to('/myevents')}}" class="underline text-gray-900 dark:text-white" style="margin-left: 155px;">My Events</a></div>
-                            </div>
+      <style>
+         #myCarousel{
+             margin-top: 60px;
+             width: 680px
+         }
+         .carousel-indicators{
+         color: green;
+         }
+         .background-circle-group{
+         background: url("img/family-group-meet-up.png");
+         width: 60vw;
+         height: 70vh;
+         background-size: 100% 100%;
+         background-repeat: no-repeat;
+         position: relative;
+         margin-top: 60px;
+         margin-left: 65px;
+         }
+         .circle-plus-heading{
+         margin: 1em 0 0.5em 0;
+         font-weight: 600;
+         line-height: 40px;
+         color: #ff1a1a;
+         text-transform: uppercase;
+         border-bottom: 4px solid #ff1a1a;
+         } 
+         #circle-plus-heading{
+         text-transform: uppercase;
+         }
+         p::first-letter{
+         font-size: 200%;
+         color: #ff1a1a;
+         }
+         #connect-family-friends{
+         }
+         #interest-photos-stories{
+         }
+         #remember-occasions{
+         }
+         #calculate-budgets{
+         }
+         #locate-events{
+         }
+         #event-planning{
+         }
+         p{
+         margin: 1em 0 0.5em 0;
+         font-weight: 600;
+         text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+         line-height: 40px;
+         color: #355681;
+         border-bottom: 1px solid rgba(53, 86, 129, 0.3);
+         }
+         @media only screen and (max-width: 2000px) {
+         body {
+         background-color: lightblue;
+         }
+         }
+      </style>
+   </x-slot>
 
-                            <div class="ml-12">
-                                <p style="margin-top: 15px; text-align:center;">Click here to access a list of your events......</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </div>
+   <body>
+
+   <div class="py-12">
+   <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+   <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+   </div>
+   <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+      <h4 id="circle-plus-heading" class="circle-plus-heading" style="margin-top: 50px; margin-left: 80px; text-align:center;">A simple way to connect with those that are important in your life....</h4>
+    
+
+      <div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="images/family-group-meet-up.png" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="images/friends-road-trip.png" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="images/happy-young-couple-enjoying-sea_.png" alt="New york" style="width:100%;">
+      </div>
+
+      <div class="item">
+          <img src="images/maldives-island.png">
     </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+
+<script>
+
+
+$('#my-slider').carousel();
+
+
+</script>
+
+
+
+         <p id="connect-family-friends" style="margin-top: 50px; margin-right: 420px; text-align:center; font-size: 20px;">Connect with your Family and Friends</p>
+         <p id="interesting-photos-stories" style="margin-top: 50px; margin-right: 395px; text-align:center; font-size: 20px;">Interesting Photos and Stories to Share</p>
+         <p id="remember-occasions" style="margin-top: 50px; margin-right: 485px; text-align:center; font-size: 20px;">Remember Special Occasions</p>
+         <p id="calculate-budgets" style="margin-top: 50px; text-align:center; margin-right: 528px; font-size: 20px;">Calculate Event Budgets</p>
+         <p id="locate-events" style="margin-top: 50px; margin-right: 414px; text-align:center; font-size: 20px;">Locate where Events are Happening</p>
+         <p id="event-planning" style="margin-top: 50px; margin-right: 500px; text-align:center; font-size: 20px;">Event Planning made Easy</p>
+         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg" style="margin-right: 90px; width: 800px;">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+               <div class="p-6">
+                  <div class="flex items-center">
+                     <div class="ml-4 text-lg leading-7 font-semibold"><a href="{{route('all.event')}}" class="underline text-gray-900 dark:text-white" style="margin-left: 120px; font-size: 20px; margin-top: 35px;">View Events</a></div>
+                  </div>
+                  <div class="ml-12">
+                     <h6 style="margin-top: 15px; text-align:center; font-size: 15px;">Click here to organise your upcoming events</h6>
+                  </div>
+               </div>
+               <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
+                  <div class="flex items-center">
+                     <div class="ml-4 text-lg leading-7 font-semibold"><a href="{{URL::to('/myevents')}}" class="underline text-gray-900 dark:text-white" style="margin-left: 120px; font-size: 20px;">My Events</a></div>
+                  </div>
+                  <div class="ml-12">
+                     <h6 style="margin-top: 15px; text-align:center; font-size: 15px;">Click here to access a list of your events</h6>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   
+
+   </body>
+
 </x-app-layout>
 

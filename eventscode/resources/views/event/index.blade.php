@@ -1,6 +1,23 @@
 <x-app-layout>
+
+
    <x-slot name="header">
-   <img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" alt="Image"/>
+
+   
+   <head>
+
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+
+
+   </head>
+
+
+
+   <a href="/"><img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="center" alt="Circle-Plus-logo" /></a>
      
       <style type="text/css">
 
@@ -66,7 +83,7 @@
          .col-md-3{
          margin-left: 1180px;
          margin-bottom: -500px;
-         width: 230px;
+         width: 290px;
          position: relative;
          top: -360px;
          }
@@ -116,7 +133,7 @@
                      </button>
                   </div>
                   @endif
-                  <div class="card-header">All Event</div>
+                  <div id="all-event" class="card-header">All Event</div>
                   <table class="table">
                      <thead>
                         <tr>
@@ -165,7 +182,7 @@
             </div>
          </div>
          <div class="col-md-3">
-            <div class="card">
+            <div id="create-event" class="card">
                <div class="card-header" style="">Create a New Event</div>
                <div class="card-body">
                   <form action="{{route('store.event')}}"method="POST">
@@ -197,7 +214,7 @@
                      <div class="mb-2">
                         <label for="exampleInputEmail1">Event Description</label>
                         <input type="text" name="event_description" class="form-control" 
-                           id="exampleInputEmail1" aria-describedby="emailHelp">
+                           id="descriptioninput" aria-describedby="emailHelp">
                         @error('event_description')
                         <span class="text-danger">{{$message}}</span>
                         @enderror
@@ -222,7 +239,7 @@
       <div class = "row">
          <div class="col-md-10">
             <div class="card">
-               <div class="card-header">Archived List</div>
+               <div id="event-archive-list" class="card-header">Event Archive List</div>
                <table class="table">
                   <thead>
                      <tr>
@@ -264,7 +281,7 @@
                      @endforeach
                   </tbody>
                </table>
-               {{$trashEvent->links()}}
+               <style="margin-bottom: 112px;">{{$trashEvent->links()}}</style>
             </div>
          </div>
          <div class="col-md-4">

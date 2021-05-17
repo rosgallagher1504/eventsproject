@@ -13,7 +13,7 @@ class EventController extends Controller
 {
     public function AllEvent(){
         $events= Event::latest()->paginate(4);
-        $trashEvent = Event::onlyTrashed()->latest()->paginate(3);
+        $trashEvent = Event::onlyTrashed()->latest()->paginate(2);
         return view('event.index', compact('events', 'trashEvent'));
     }
 
