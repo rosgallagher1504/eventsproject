@@ -1,69 +1,40 @@
 <x-app-layout>
+
+
    <x-slot name="header">
+
+
+   <head>
+
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+
+
       <style type="text/css">
-         body{
-            width: 100%;
+         
+         
+         
+         @media only screen and (max-width: 900px) {
+            body{
+               background-color: olive;
+            }
          }
-         #view-event{
-            margin-left: 400px;
+
+
+         @media screen and (max-width: 600px) {
+            body{
+               background-color: olive;
+            }
          }
-         .view-event-title{
-            background-color: #f5f5f5;
-            height: 100px;
-            width: 800px;
-            margin-top: 50px;
-            margin-bottom: -60px;
-            margin-left: 6px;
-         }
-         .event-view-title{
-            margin: 1em 0.5em 0;
-            margin-left: 90px;
-            font-weight: normal;
-            position: relative;
-            text-shadow: 0 -1px rgba(0,0,0,0.6);
-            font-size: 42px;
-            line-height: 60px;
-            width: 1500px;
-            background: #355681;
-            background: rgba(53, 86, 129, 0.8);
-            border: 1px solid #fff;
-            padding: 5px 15px;
-            color: #ffffff;
-            border-radius: 0 10px 0 10px;
-            box-shadow: inset 0 0 5px rgba(53, 86, 129, 0.5);
-            text-align: center;
-            border-color: #ffffe0;
-            border-width: 12px;
-         }
-         #view-event{
-            margin-left: -250px;
-            margin-top: 50px;
-            border-color: #ff1a1a;
-         }
-         .card{
-            border-color: #000000;
-            border-width: 8px;
-         }
-         h4{
-            margin-left: 360px;
-            text-decoration: underline;
-         }
-         .event-details{
-            left: 200px;
-         }
-         .btn{
-            left: 248px;
-         }
-         #map{
-            height: 580px;
-            width: 620px;
-            left: 1280px;
-            bottom: 700px;
-            border-color: #000000;
-            border-width: 4px;
-         }
+
       </style>
-      <img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="center" alt="Circle-Plus-logo" />
+
+      </head>
+
+      <a href="/"><img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="center" alt="Circle-Plus-logo" /></a>
    </x-slot>
 
    <body>
@@ -76,11 +47,11 @@
       <div class= "container">
          <div class = "row">
             <div class="col-md-8">
-               <div class="card">
+               <div id="view-event-details" class="card">
                   <div class="card-header"><h4>Event Details</h4></div>
                   <div class="card-body">
                      <form class="event-details" action="{{url('event/view/'.$events->id)}}"method="GET">
-                        <div class="card text-white bg-primary mb-3" style="max-width: 22rem; left: 248px;">
+                        <div class="card text-white mb-3" style="max-width: 22rem; left: 248px; background-color: #009191">
                            <div class="card-header">Event Name</div>
                            <div class="card-body">
                               <p class="card-text"  name="event_name" >{{$events->event_name}}</p>
@@ -92,7 +63,7 @@
                               <p class="card-text">{{$events->event_location}}</p>
                            </div>
                         </div>
-                        <div class="card text-white bg-primary mb-3" style="max-width: 22rem; left: 248px;">
+                        <div class="card text-white mb-3" style="max-width: 22rem; left: 248px; background-color: #009191">
                            <div class="card-header">Event Date</div>
                            <div class="card-body">
                               <p class="card-text">{{$events->event_date}}</p>
@@ -104,14 +75,14 @@
                               <p class="card-text">{{$events->event_description}}</p>
                            </div>
                         </div>
-                        <div class="card text-white bg-primary mb-3" style="max-width: 22rem; left: 248px;">
+                        <div class="card text-white mb-3" style="max-width: 22rem; left: 248px; background-color: #009191">
                            <div class="card-header">Covid Limit</div>
                            <div class="card-body">
                               <p class="card-text">{{$events->covid_limit}}</p>
                            </div>
                         </div>
                         <!-- <button type="submit" class="btn btn-primary">Register for Event</button> -->
-                        <a href="{{url('event/cancelupdate') }}" class="btn btn-danger" style="margin-left: 248px;">Return to Events</a>
+                        <a href="{{url('event/cancelupdate') }}" id="return-to-events" class="btn btn-danger" style="margin-left: 248px;">Return to Events</a>
                      </form>
                   </div>
                </div>
@@ -198,5 +169,8 @@
 
    </body>
 
+
 </x-app-layout>
+
+
 
