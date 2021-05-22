@@ -10,53 +10,12 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/edit.blade.css') }}" />
 
 
     </head>
 
-
-      <style type="text/css">
-         #edit-event{
-            margin-left: 400px;
-            margin-top: 40px;
-         }
-         .edit-event-title{
-            background-color: #f5f5f5;
-            height: 100px;
-            width: 800px;
-            margin-top: 50px;
-            margin-bottom: -70px;
-         }
-         .event-edit-title{
-            font-size: 42px;
-            left: 70px;
-            margin: 1em 0.5em 0;
-            font-weight: normal;
-            position: relative;
-            text-shadow: 0 -1px rgba(0,0,0,0.6);
-            line-height: 60px;
-            width: 1700px;
-            background: #355681;
-            background: rgba(53, 86, 129, 0.8);
-            border: 1px solid #fff;
-            padding: 5px 15px;
-            color: #ffffff;
-            border-radius: 0 10px 0 10px;
-            box-shadow: inset 0 0 5px rgba(53, 86, 129, 0.5);
-            text-align: center;
-            border-color: #b22222;
-            border-width: 8px;
-         }
-         .card{
-            border-color: #000000;
-            border-width: 4px;
-         }
-         .update-event{
-            margin-left: 325px;
-            font-weight: bold;
-         }
-      </style>
+    
       <a href="/"><img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="center" alt="Circle-Plus-logo" /></a>
    </x-slot>
       <div class="edit-event-title">

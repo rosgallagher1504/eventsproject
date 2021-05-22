@@ -1,0 +1,50 @@
+#myCarousel{
+    margin-top: 60px;
+    width: 750px
+}
+.carousel-indicators{
+    color: green;
+}
+.background-circle-group{
+background: url("img/family-group-meet-up.png");
+width: 60vw;
+height: 70vh;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+position: relative;
+margin-top: 60px;
+margin-left: 65px;
+}
+.circle-plus-heading{
+margin: 1em 0 0.5em 0;
+font-weight: 600;
+line-height: 40px;
+color: #ff1a1a;
+text-transform: uppercase;
+border-bottom: 4px solid #ff1a1a;
+} 
+#circle-plus-heading{
+text-transform: uppercase;
+}
+p::first-letter{
+font-size: 200%;
+color: #ff1a1a;
+text-decoration: none;
+}
+#connect-family-friends{
+   text-decoration: none;
+}
+#interest-photos-stories{
+   text-decoration: none;
+}
+#remember-occasions{
+    text-decoration: none;
+}
+p{
+margin: 1em 0 0.5em 0;
+font-weight: 600;
+text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+line-height: 40px;
+color: #355681;
+border-bottom: 1px solid rgba(53, 86, 129, 0.3);
+}
