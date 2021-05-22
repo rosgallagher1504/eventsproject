@@ -130,6 +130,9 @@ h4{
     #return-to-events{
         width: 160px;
     }
+    #view-gallery{
+        width: 160px;
+    }
     #map{
         margin-left: 580px;
         top: -752px;
@@ -157,6 +160,6 @@ h4{
         margin-top: -62px;
         width: 140px;
     }
+}
 
-
-    @media only screen and (min-width: )
+    /* @media only screen and (min-width: ) */

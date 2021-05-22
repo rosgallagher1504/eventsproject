@@ -70,6 +70,7 @@
                         </div>
                         <!-- <button type="submit" class="btn btn-primary">Register for Event</button> -->
                         <a href="{{url('event/cancelupdate') }}" id="return-to-events" class="btn btn-danger" style="margin-left: 248px;">Return to Events</a>
+                        <a href="{{url('dropzone') }}" id="view-gallery" class="btn btn-secondary" style="margin-left: 248px;">View Event Gallery</a>
                      </form>
                   </div>
                </div>

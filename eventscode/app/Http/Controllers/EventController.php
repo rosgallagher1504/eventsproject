@@ -7,6 +7,7 @@ use App\Models\Event;
 use Auth;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\User;
 
 
 class EventController extends Controller
@@ -62,6 +63,17 @@ class EventController extends Controller
         return view('event.view', compact('events'));
     }
 
+    //take an event and register a user to it
+    public function Register($id){
+        $events = Event::find($id);
+        $events = DB::table('events')->where('id',$id)->first();
+        $user = User::where('id', Auth::user()->id);
+
+        if($user){
+            $events->users()->attach($user);
+        }
+    
+    }
 
     public function Edit($id){
         $events = Event::find($id);
@@ -114,6 +126,8 @@ class EventController extends Controller
         $delete = Event::onlyTrashed()-> find($id)->forcedelete();
         return Redirect()->back()->with('success', 'Event Permanetly Deleted');
     }
+
+  
 
     public function Logout(){
         Auth::Logout();

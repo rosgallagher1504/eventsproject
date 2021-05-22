@@ -20,6 +20,11 @@ class Event extends Model
 
     //creating one to one relationship (has one)
     public function user(){
-        return $this->hasOne(User::class, 'id', 'user_id');
+         return $this->hasOne(User::class, 'id', 'user_id');
+     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 }
