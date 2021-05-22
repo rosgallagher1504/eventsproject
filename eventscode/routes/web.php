@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 Use App\Http\Controllers\EventController;
-
+Use App\Http\Controllers\DropzoneController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +28,15 @@ Route::get('/myevents', function(){
     return view('myevents');
 });
 
+//dropzone controller
+Route::get('/dropzone', [DropzoneController::class, 'dropzone']);
+
+Route::post('dropzone/upload', [DropzoneController::class, 'upload'])->name('dropzone.upload');
+
+Route::get('dropzone/fetch', [DropzoneController::class, 'fetch'])->name('dropzone.fetch');
+
+Route::get('dropzone/delete', [DropzoneController::class, 'delete'])->name('dropzone.delete');
+
 //events controller
 Route::get('/event/all',[EventController::class, 'AllEvent',])->name('all.event');
 
@@ -38,6 +47,8 @@ Route::get('/event/view/{id}',[EventController::class, 'View']);
 Route::get('/event/edit/{id}',[EventController::class, 'Edit']);
 
 Route::post('/event/update/{id}',[EventController::class, 'Update']);
+
+Route::post('/event/register/{id}',[EventController::class, 'Register']);
 
 Route::get('/softdelete/event/{id}',[EventController::class, 'SoftDelete']);
 
