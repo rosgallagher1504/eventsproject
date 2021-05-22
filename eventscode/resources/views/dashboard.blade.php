@@ -16,68 +16,16 @@
       <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 
 
+      <link rel="preconnect" href="https://font.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.blade.css')}}" />
+
+
       </head> 
 
 
-      <style>
-         #myCarousel{
-             margin-top: 60px;
-             width: 680px
-         }
-         .carousel-indicators{
-         color: green;
-         }
-         .background-circle-group{
-         background: url("img/family-group-meet-up.png");
-         width: 60vw;
-         height: 70vh;
-         background-size: 100% 100%;
-         background-repeat: no-repeat;
-         position: relative;
-         margin-top: 60px;
-         margin-left: 65px;
-         }
-         .circle-plus-heading{
-         margin: 1em 0 0.5em 0;
-         font-weight: 600;
-         line-height: 40px;
-         color: #ff1a1a;
-         text-transform: uppercase;
-         border-bottom: 4px solid #ff1a1a;
-         } 
-         #circle-plus-heading{
-         text-transform: uppercase;
-         }
-         p::first-letter{
-         font-size: 200%;
-         color: #ff1a1a;
-         }
-         #connect-family-friends{
-         }
-         #interest-photos-stories{
-         }
-         #remember-occasions{
-         }
-         #calculate-budgets{
-         }
-         #locate-events{
-         }
-         #event-planning{
-         }
-         p{
-         margin: 1em 0 0.5em 0;
-         font-weight: 600;
-         text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
-         line-height: 40px;
-         color: #355681;
-         border-bottom: 1px solid rgba(53, 86, 129, 0.3);
-         }
-         @media only screen and (max-width: 2000px) {
-         body {
-         background-color: lightblue;
-         }
-         }
-      </style>
+      
    </x-slot>
 
    <body>
@@ -87,7 +35,7 @@
    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
    </div>
    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-      <h4 id="circle-plus-heading" class="circle-plus-heading" style="margin-top: 50px; margin-left: 80px; text-align:center;">A simple way to connect with those that are important in your life....</h4>
+      <h4 id="circle-plus-heading" class="circle-plus-heading" style="margin-top: 50px; margin-left: -205px; text-align:center; font-family: 'Open Sans', sans-serif; font-size: 30px; width: 1200px;">A simple way to connect with those that are important in your life</h4>
     
 
       <div class="container">
@@ -101,7 +49,7 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="width: 860px; right: 70px;">
       <div class="item active">
         <img src="images/family-group-meet-up.png" alt="Los Angeles" style="width:100%;">
       </div>
@@ -142,13 +90,15 @@ $('#my-slider').carousel();
 
 
 
-         <p id="connect-family-friends" style="margin-top: 50px; margin-right: 420px; text-align:center; font-size: 20px;">Connect with your Family and Friends</p>
-         <p id="interesting-photos-stories" style="margin-top: 50px; margin-right: 395px; text-align:center; font-size: 20px;">Interesting Photos and Stories to Share</p>
-         <p id="remember-occasions" style="margin-top: 50px; margin-right: 485px; text-align:center; font-size: 20px;">Remember Special Occasions</p>
-         <p id="calculate-budgets" style="margin-top: 50px; text-align:center; margin-right: 528px; font-size: 20px;">Calculate Event Budgets</p>
-         <p id="locate-events" style="margin-top: 50px; margin-right: 414px; text-align:center; font-size: 20px;">Locate where Events are Happening</p>
-         <p id="event-planning" style="margin-top: 50px; margin-right: 500px; text-align:center; font-size: 20px;">Event Planning made Easy</p>
-         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg" style="margin-right: 90px; width: 800px;">
+         <p id="connect-family-friends" style="margin-top: 50px; margin-right: 340px; text-align:center; font-family: 'Open Sans', sans-serif; font-size: 20px;">Connect with your Family and Friends</p> 
+         <p id="interesting-photos-stories" style="margin-top: 50px; margin-right: 340px; text-align:center; font-family: 'Open Sans', sans-serif; font-size: 20px;">Interesting Photos and Stories to Share</p> 
+         <p id="remember-occasions" style="margin-top: 50px; margin-right: 340px; text-align:center; font-family: 'Open Sans', sans-serif; font-size: 20px;">Remember Special Occasions</p> 
+         <p id="calculate-budgets" style="margin-top: 50px; text-align:center; margin-right: 340px; font-family: 'Open Sans', sans-serif; font-size: 20px;">Calculate Event Budgets</p> 
+         <p id="locate-events" style="margin-top: 50px; margin-right: 340px; text-align:center; font-family: 'Open Sans', sans-serif; font-size: 20px;">Locate where Events are Happening</p> 
+         <p id="event-planning" style="margin-top: 50px; margin-right: 340px; text-align:center; font-family: 'Open Sans' sans-serif; font-size: 20px;">Event Planning made Easy</p> 
+         
+         
+         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg" style="margin-top: 40px; margin-right: 90px; width: 800px;">
             <div class="grid grid-cols-1 md:grid-cols-2">
                <div class="p-6">
                   <div class="flex items-center">
@@ -170,6 +120,7 @@ $('#my-slider').carousel();
          </div>
       </div>
    </div>
+
 
    
 

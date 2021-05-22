@@ -10,27 +10,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-      <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
 
 
-      <style type="text/css">
-         
-         
-         
-         @media only screen and (max-width: 900px) {
-            body{
-               background-color: olive;
-            }
-         }
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/view.blade.css') }}" />
 
 
-         @media screen and (max-width: 600px) {
-            body{
-               background-color: olive;
-            }
-         }
-
-      </style>
+      
 
       </head>
 
@@ -39,7 +26,7 @@
 
    <body>
    <div class="view-event-title">
-      <h2 class="event-view-title">
+      <h2 class="event-view-title" style="width: 1616px; margin-left: 25px;">
          View Event<b> </b>
       </h2>
    </div>
@@ -48,7 +35,7 @@
          <div class = "row">
             <div class="col-md-8">
                <div id="view-event-details" class="card">
-                  <div class="card-header"><h4>Event Details</h4></div>
+                  <div class="card-header" style="margin-left: -30px;"><h4>Event Details</h4></div>
                   <div class="card-body">
                      <form class="event-details" action="{{url('event/view/'.$events->id)}}"method="GET">
                         <div class="card text-white mb-3" style="max-width: 22rem; left: 248px; background-color: #009191">
@@ -100,7 +87,7 @@
       function initAutocomplete() {
         const map = new google.maps.Map(document.getElementById("map"), {
           center: { lat: 54.58333, lng: -5.93333 },
-          zoom: 6,
+          zoom: 7,
           mapTypeId: "roadmap",
         });
         // Create the search box and link it to the UI element.

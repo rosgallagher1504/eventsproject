@@ -10,7 +10,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-   <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+  
+    
+
+   <link rel="stylesheet" type="text/css" href="{{ asset('css/index.blade.css') }}" />
 
 
    </head>
@@ -19,104 +22,15 @@
 
    <a href="/"><img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="center" alt="Circle-Plus-logo" /></a>
      
-      <style type="text/css">
-
-         .all-events-title{
-            margin-top: 50px;
-            margin-bottom: -2px;
-            height: 50px;
-         }
-         .events-all-title{
-            font-size: 42px;
-            margin-left: 90px;
-            margin: 1em 0.5 0;
-            font-weight: normal;
-            position: relative;
-            text-shadow: 0 -1px rgba(0,0,0,0.6);
-            line-height: 70px;
-            width: 1500px;
-            background: #355681;
-            background: rgba(53, 86, 129, 0.8);
-            border: 1px solid #fff;
-            color: #ffffff;
-            border-radius: 0 10px 0 10px;
-            box-shadow: inset 0 0 5px rgba(53, 86, 129, 0.5);
-            text-align: center;
-            border-color: 	#B22222;
-            border-width: 8px;
-         }
-         .py-12{
-            margin-top: 30px;
-         }
-         .card{
-            border-color: #000000;
-            border-width: 4px;
-         }
-         .table-responsive{
-         height: 458px;
-         }
-         .all-events-headings{
-            margin-left: 300px;
-         }
-         .event-actions{
-         background-color: #ffffff;
-         color: #000000;
-         padding: 10px 5px;
-         top: auto;
-         left: 0;
-         right: 0;
-         height: 45px;
-         width: 100px;
-         margin-left: 50px;
-         position: relative;
-         }
-         .event-actions a {
-         color: #000000;
-         text-decoration: none;
-         }
-         .event-actions li {
-         position: relative;
-         }
-         #archived-table{
-         margin-top: -5px;
-         }
-         .col-md-3{
-         margin-left: 1180px;
-         margin-bottom: -500px;
-         width: 290px;
-         position: relative;
-         top: -360px;
-         }
       
-         /* Optional: Makes the sample page fill the window. */
-         html {
-         background-color: #f5f5f5;
-         height: 100%;
-         margin: 0;
-         padding: 0;
-         }   
-         #description {
-         font-family: Roboto;
-         font-size: 15px;
-         font-weight: 300;
-         }
-         #infowindow-content .title {
-         font-weight: bold;
-         }
-         #infowindow-content {
-         display: none;
-         }
-         #title {
-         color: #fff;
-         background-color: #4d90fe;
-         font-size: 25px;
-         font-weight: 500;
-         padding: 6px 12px;
-         }
-      </style>
    </x-slot>
+
+
+
+   <body>
+   
       <div class="all-events-title">
-      <h2 class="events-all-title">
+      <h2 class="events-all-title" style="margin-right: 60px;">
          All Events<b> </b>
       </h2>
       </div>
@@ -124,7 +38,7 @@
       <div class="container">
          <div class = "row">
             <div class="col-md-10">
-               <div class="card">
+               <div class="card" style="width: 1200px;">
                   @if(session('success'))
                   <div class="alert alert-success alert-dismissible fade show" role="alert">
                      <strong>{{ session('success' ) }}</strong>
@@ -133,7 +47,7 @@
                      </button>
                   </div>
                   @endif
-                  <div id="all-event" class="card-header">All Event</div>
+                  <div id="all-event" class="card-header" style="text-align: center; font-size: 24px; font-weight: bold;">Event List</div>
                   <table class="table">
                      <thead>
                         <tr>
@@ -182,7 +96,7 @@
             </div>
          </div>
          <div class="col-md-3">
-            <div id="create-event" class="card">
+            <div id="create-event" class="card" style="margin-left: 80px; width: 300px;">
                <div class="card-header" style="">Create a New Event</div>
                <div class="card-body">
                   <form action="{{route('store.event')}}"method="POST">
@@ -227,7 +141,7 @@
                         <span class="text-danger">{{$message}}</span>
                         @enderror
                      </div>
-                     <button type="submit" class="btn btn-primary">Confirm Event</button>
+                     <button type="submit" class="btn btn-primary" style="margin-top: 10px; margin-left: 70px;">Confirm Event</button>
                   </form>
                </div>
             </div>
@@ -238,8 +152,8 @@
    <div id="archived-table" class= "container">
       <div class = "row">
          <div class="col-md-10">
-            <div class="card">
-               <div id="event-archive-list" class="card-header">Event Archive List</div>
+            <div class="card" style="width: 1220px;">
+               <div id="event-archive-list" class="card-header" style="text-align:center; font-size: 24px; font-weight: bold; margin-top: 50px; ">Event Archive List</div>
                <table class="table">
                   <thead>
                      <tr>
@@ -250,7 +164,7 @@
                         <th scope="col" style="text-align:center;">Event Postcode</th>
                         <th scope="col" style="text-align:center;">Event Date</th>
                         <th scope="col" style="text-align:center;">Covid Limit</th>
-                        <th scope="col" style="text-align:center;">Actions</th>
+                        <th scope="col" style="text-align:center; margin-left: -20px;">Actions</th>
                   </div>
                      </tr>
                   </thead>
@@ -266,8 +180,8 @@
                         <td style="text-align:center;">{{$event->covid_limit}}</td>
                         <td>
                            <div class="btn-group">
-                              <button type="button" class="btn btn-danger" style="left: 30%;">Event Actions</button>
-                              <button type="button" class="btn btn-danger dropdown-toggle" style="left: 30%;" data-toggle="dropdown">
+                              <button type="button" class="btn btn-danger" style="left: 20px;">Event Actions</button>
+                              <button type="button" class="btn btn-danger dropdown-toggle" style="left: 20px;" data-toggle="dropdown">
                               <span class="caret"></span>
                               <span class="sr-only">Toogle Dropdown</span>
                               </button>
@@ -289,8 +203,8 @@
       </div>
    </div>
    <!-- End Trash -->
- 
-  
-   
-   </div>
+</div>
+
+
+</body>
 </x-app-layout>
