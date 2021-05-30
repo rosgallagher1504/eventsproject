@@ -28,6 +28,14 @@ Route::get('/myevents', function(){
     return view('myevents');
 });
 
+Route::get('/index', function(){
+    return view('index');
+});
+
+ Route::post('/process', function(){
+    return view('process')->name('process');
+ });
+
 //dropzone controller
 Route::get('/dropzone', [DropzoneController::class, 'dropzone']);
 
@@ -40,6 +48,10 @@ Route::get('dropzone/delete', [DropzoneController::class, 'delete'])->name('drop
 //events controller
 Route::get('/event/all',[EventController::class, 'AllEvent',])->name('all.event');
 
+Route::get('/userevents', [EventController::class, 'UserEvents']);
+
+Route::get('/myevents', [EventController::class, 'UserEvents']);
+
 Route::post('/event/all',[EventController::class, 'AddEvent',])->name('store.event');
 
 Route::get('/event/view/{id}',[EventController::class, 'View']);
@@ -48,7 +60,7 @@ Route::get('/event/edit/{id}',[EventController::class, 'Edit']);
 
 Route::post('/event/update/{id}',[EventController::class, 'Update']);
 
-Route::post('/event/register/{id}',[EventController::class, 'Register']);
+Route::get('/event/register/{id}',[EventController::class, 'Register']);
 
 Route::get('/softdelete/event/{id}',[EventController::class, 'SoftDelete']);
 

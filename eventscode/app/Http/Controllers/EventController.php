@@ -7,7 +7,7 @@ use App\Models\Event;
 use Auth;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
-use App\User;
+use App\Models\User;
 
 
 class EventController extends Controller
@@ -18,6 +18,16 @@ class EventController extends Controller
         return view('event.index', compact('events', 'trashEvent'));
     }
 
+    public function UserEvents(){
+        $events = DB::table('events')
+        ->join('event_user', 'event_user.event_id','=','events.id')
+        ->join('users', 'users.id', '=', 'event_user.user_id')
+        ->where('event_user.user_id', Auth::user()->id)
+        ->get();
+
+        return view('myevents', compact('events'));
+    }
+
     public function AddEvent(Request $request){
         
             $validatedData = $request->validate([
@@ -25,8 +35,7 @@ class EventController extends Controller
                 'event_location'=>'required',
                 'event_date'=>'required', //needs to be in a date format
                 'event_description'=>'required',
-                'covid_limit'=>'required', //needs to be a numeric value
-               //'body' => 'required',
+                'covid_limit'=>'required',
             ],
             [
                 'event_name.required'=> 'Please Input Event Name',
@@ -40,17 +49,7 @@ class EventController extends Controller
             'event_date' => $request->event_date,
             'event_description' => $request->event_description,
             'covid_limit'=> $request->covid_limit,
-            //'created at'=>Carbon::now()
          ]);
-
-        // $event = new Event;
-        // $event->event_name = $request->event_name;
-        // $event->user_id = Auth::user()->id;
-        // $event->event_location = $request->event_location;
-        // $event->event_date = $request->event_date;
-        // $event->event_description = $request->event_description;
-        // $evnt->covid_limit = $request->covid_limit;
-        // $event-> save();
 
         return Redirect()->back()->with('success', 'Event Added Successfully');
     
@@ -66,12 +65,13 @@ class EventController extends Controller
     //take an event and register a user to it
     public function Register($id){
         $events = Event::find($id);
-        $events = DB::table('events')->where('id',$id)->first();
-        $user = User::where('id', Auth::user()->id);
+        $user = Auth::user()->id;
 
         if($user){
             $events->users()->attach($user);
         }
+
+        return Redirect()->back()->with('success', 'You have successfully Registered for this Event');
     
     }
 
@@ -85,10 +85,9 @@ class EventController extends Controller
         $validatedData = $request->validate([
             'event_name' => 'required|unique:events|max:255',
             'event_location'=>'required',
-            'event_date'=>'required', //needs to be in a date format
+            'event_date'=>'required',
             'event_description'=>'required',
-            'covid_limit'=>'required', //needs to be a numeric value
-           //'body' => 'required',
+            'covid_limit'=>'required', 
         ],
         [
             'event_name.required'=> 'Please Input Event Name',
@@ -127,7 +126,6 @@ class EventController extends Controller
         return Redirect()->back()->with('success', 'Event Permanetly Deleted');
     }
 
-  
 
     public function Logout(){
         Auth::Logout();
