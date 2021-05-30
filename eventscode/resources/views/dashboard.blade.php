@@ -14,7 +14,7 @@
 
 
       <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-
+      
 
       <link rel="preconnect" href="https://font.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -31,9 +31,7 @@
    <body>
 
    <div class="py-12">
-   <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-   <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-   </div>
+  
    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
       <h4 id="circle-plus-heading" class="circle-plus-heading" style="margin-top: 50px; margin-left: -205px; text-align:center; font-family: 'Open Sans', sans-serif; font-size: 30px; width: 1200px;">A simple way to connect with those that are important in your life</h4>
     

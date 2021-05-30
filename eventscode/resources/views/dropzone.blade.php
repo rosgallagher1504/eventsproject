@@ -1,18 +1,43 @@
-<html>
- <head>
+<x-app-layout>
+
+
+<x-slot name="header">
+
+
+<a href="/"><img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="center" alt="Circle-Plus-Logo" /></a>
+
+
+<head>
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <a href="/"><img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="center" alt="Circle-Plus-logo" /></a>
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+
+
+
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/dropzone.blade.css') }}" />
+
+
   <title>Event Gallery</title>
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
- </head>
- <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+ 
+  
+  
+  </head>
+
+
+
+</x-slot>
+ 
+ 
+  <body>
   <div class="container-fluid">
       <br />
-    <h3 align="center">Upload and Store your Memories!</h3>
+    <h3 class="dropzone-title" align="center">Upload and Store your Memories!</h3>
     <br />
         
       <div class="panel panel-default">
@@ -33,10 +58,10 @@
         <div class="panel-heading">
           <h3 class="panel-title">Your Event Memories</h3>
         </div>
-        <div class="panel-body" id="uploaded_image">
+        <div class="panel-body" id="uploaded_image" style="height: 800px; width: 2000px;">
         </div>
       </div>
-      <a href="{{url('event/cancelupdate') }}" id="return-to-events" class="btn btn-danger" style="margin-left: 248px;">Return to Events</a>
+      <a href="{{url('event/cancelupdate') }}" id="return-to-events" class="btn btn-danger" style="left: 200px;">Return to Events</a>
     </div>
  </body>
 </html>
@@ -93,3 +118,7 @@
   });
 
 </script>
+
+
+
+</x-app-layout>

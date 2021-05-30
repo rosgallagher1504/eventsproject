@@ -17,7 +17,7 @@
 
 
    </head>
-
+ 
 
 
    <a href="/"><img src="{{url('/images/Branding-Circle-Plus-Logo.png')}}" class="center" alt="Circle-Plus-logo" /></a>
@@ -92,7 +92,7 @@
                      </tbody>
                   </table>
                </div>
-               {{ $events->links() }}
+                {{ $events->links() }}
             </div>
          </div>
          <div class="col-md-3">
@@ -152,8 +152,8 @@
    <div id="archived-table" class= "container">
       <div class = "row">
          <div class="col-md-10">
-            <div class="card" style="width: 1220px;">
-               <div id="event-archive-list" class="card-header" style="text-align:center; font-size: 24px; font-weight: bold; margin-top: 50px; ">Event Archive List</div>
+            <div class="card" style="width: 1200px;">
+               <div id="event-archive-list" class="card-header" style="text-align:center; font-size: 24px; font-weight: bold;">Event Archive List</div>
                <table class="table">
                   <thead>
                      <tr>
@@ -195,7 +195,7 @@
                      @endforeach
                   </tbody>
                </table>
-               <style="margin-bottom: 112px;">{{$trashEvent->links()}}</style>
+               {{$trashEvent->links()}}
             </div>
          </div>
          <div class="col-md-4">
@@ -204,6 +204,12 @@
    </div>
    <!-- End Trash -->
 </div>
+
+
+
+
+    
+
 
 
 </body>
