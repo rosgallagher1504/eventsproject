@@ -86,8 +86,6 @@
                                  </button>
                                  <ul class="dropdown-menu" role="menu">
                                     <li class="event-actions"><a href="{{url('event/view/'.$event->id) }}">View</a></li>
-                                    <li class="event-actions"><a href="{{url('event/register/'.$event->id) }}" value= "{{$event->id}}">Register</a></li>
-                                    <li class="event-actions"><a href="{{url('event/edit/'.$event->id) }}">Edit</a></li>
                                     <li class="event-actions"><a href="{{url('softdelete/event/'.$event->id) }}">Cancel</a></li>
                                  </ul>
                               </div>
